@@ -10,14 +10,14 @@ spec:
   rules:
   - host: solar-system.local
     http:
-      paths:
-      - backend:
-          service:
-            name: solar-system
-            port:
-              number: 3000
-        path: /
-        pathType: Prefix
+    paths:
+    - path: /
+      pathType: Prefix
+      backend:
+        service:
+          name: solar-system
+          port:
+            number: 3000
   tls:
   - hosts:
     - solar-system.localhost
